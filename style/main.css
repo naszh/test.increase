@@ -4,3 +4,167 @@
 	--line-grey: #696969;
 	--white: #ffffff;
 }
+
+html {
+	height: 100%;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	min-height: 100vh;
+	width: 100%;
+	max-width: 1010px;
+	/* 960+25*2 */
+	margin: 0 auto;
+	padding: 25px;
+}
+
+.box-dark {
+	padding: 22px;
+	background-color: var(--dark-grey);
+	color: var(--white);
+}
+
+.box-light {
+	padding: 22px;
+	background-color: var(--light-grey);
+	color: var(--dark-grey);
+}
+
+.header {
+	display: flex;
+	gap: 24px;
+}
+
+.header__item {
+	flex: 1 1 auto;
+}
+
+.logo {
+	flex: 0 0 auto;
+	cursor: pointer;
+}
+
+.address {
+	text-align: right;
+}
+
+.address__item {
+	display: block;
+}
+
+.address__item:nth-child(2),
+.address__item:nth-child(3) {
+	text-decoration: underline;
+}
+
+.line {
+	border-bottom: 1px solid var(--line-grey);
+}
+
+.main {
+	flex: 1 0 auto;
+	display: grid;
+	grid-template-columns: 1.1fr 4fr;
+	gap: 24px;
+}
+
+.navigation {
+	height: fit-content;
+}
+
+.text-bold {
+	font-weight: 900;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+}
+
+.list__item {
+	margin-left: 50px;
+	list-style: square;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+	grid-auto-rows: 150px;
+	gap: 24px;
+}
+
+.card {
+	overflow: auto;
+	cursor: pointer;
+}
+
+.lorem {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px;
+}
+
+.lorem__text {
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.text-hidden {
+	overflow: hidden;
+}
+
+.footer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+
+.footer__list {
+	column-count: 2;
+}
+
+.footer__text {
+	list-style: square;
+	list-style-position: inside;
+}
+
+.footer__right {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+	.main {
+		grid-template-columns: none;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	.navigation {
+		column-count: 2;
+	}
+
+	.footer {
+		grid-template-columns: none;
+	}
+
+	.footer__list {
+		column-count: 3;
+	}
+}
